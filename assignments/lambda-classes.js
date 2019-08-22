@@ -13,11 +13,26 @@ class Person {
   }
 }
 
-const speaker = new Person("Esther", 26, "Nigeria");
-console.log(speaker);
+//Example for Object1: Esther
+const esther = new Person("Esther", 26, "Nigeria");
+console.log(esther);
 
-const speaking = speaker.speak();
+const speaking = esther.speak();
 console.log(speaking);
+
+//Example for Object2: Lisa
+const lisa = new Person("Lisa", 40, "Ireland");
+console.log(lisa);
+
+const lisaSpeaks = lisa.speak();
+console.log(lisaSpeaks);
+
+//Example for Object3: Pete
+const pete = new Person("Pete", 29, "UK");
+console.log(pete);
+
+const peteSpeaks = pete.speak();
+console.log(peteSpeaks);
 
 //Code for Instructor
 class Instructors extends Person {
@@ -41,23 +56,39 @@ class Instructors extends Person {
   }
 }
 
-const sweets = new Instructors(
-  "Sade",
+//Example for Object1: Gabe
+
+const gabe = new Instructors(
+  "Gabe",
   40,
-  "Lagos",
+  "EU",
   "Array Methods",
   "JavaScript",
   "Lambda School is Awesome"
 );
 
-console.log(sweets);
-
-sweets.demo("English");
-console.log(sweets);
+gabe.demo("English");
+console.log(gabe);
 
 let student = { name: "Segun" };
 
-sweets.grade(student, "Maths");
+const gabeGrades = gabe.grade(student, "Maths");
+console.log(gabeGrades);
+
+//Example for Object2: Cindy
+const cindy = new Instructors(
+  "Cindy",
+  37,
+  "Ghana",
+  "Constructors",
+  "CSS",
+  "I'm a great teacher"
+);
+
+console.log(cindy);
+
+const cindyGrades = cindy.grade(student, "Data Science");
+console.log(cindyGrades);
 
 //Code for Student
 class Student extends Person {
@@ -83,6 +114,40 @@ class Student extends Person {
     return `${this.name} has begun sprint challenge on ${this.subject}`;
   }
 }
+
+//Example for Object1: Aaron
+const aaron = new Student("Aaron", 26, "USA", "Teaching", "CS132", [
+  "HTML",
+  "CSS",
+  "Java"
+]);
+console.log(aaron);
+
+const aaronsSubjects = aaron.listsSubjects();
+console.log(aaronsSubjects);
+
+const aaronPR = aaron.PRAssignment("JavaScript");
+console.log(aaronPR);
+
+const aaronSprint = aaron.sprintChallenge("JavaScript");
+console.log(aaronSprint);
+
+//Example for Object2: Mariam
+const mariam = new Student("Mariam", 26, "USA", "Teaching", "CS132", [
+  "HTML",
+  "CSS",
+  "Java"
+]);
+console.log(mariam);
+
+const mariamsSubjects = mariam.listsSubjects();
+console.log(mariamsSubjects);
+
+const mariamPR = mariam.PRAssignment("React");
+console.log(mariamPR);
+
+const mariamSprint = mariam.sprintChallenge("React");
+console.log(mariamSprint);
 
 //Code for Project Manager
 class ProjectManager extends Instructors {
@@ -113,3 +178,43 @@ class ProjectManager extends Instructors {
     return `${this.name} debugs ${this.student.name}'s code on ${this.subject}`;
   }
 }
+
+//Example for Object1: Emily
+const emily = new ProjectManager(
+  "Emily",
+  30,
+  "Canada",
+  "Prototypes",
+  "Python",
+  "I gotcha",
+  "WEBEU3",
+  "Gabe"
+);
+
+console.log(emily);
+
+const emilyStandUp = emily.standUp("webeu3");
+console.log(emilyStandUp);
+
+const emilyDebugs = emily.debugsCode({ name: "Chika" }, "Function");
+console.log(emilyDebugs);
+
+//Example for Object2: Tobi
+const tobi = new ProjectManager(
+  "Tobi",
+  30,
+  "Japan",
+  "FlexBox",
+  "CSS",
+  "I'm always on time",
+  "WEBEU2",
+  "Mark"
+);
+
+console.log(tobi);
+
+const tobiStandUp = tobi.standUp("webeu2");
+console.log(tobiStandUp);
+
+const tobiDebugs = tobi.debugsCode({ name: "Lois" }, "Arrays");
+console.log(tobiDebugs);
