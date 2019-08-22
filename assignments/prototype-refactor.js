@@ -34,7 +34,7 @@ Prototype Refactor
 // console.log(sade);
 
 //Refactoring using class
-class Person {
+class Person2 {
   constructor(name, age) {
     this.name = name;
     this.age = age;
@@ -53,7 +53,7 @@ class Person {
   }
 }
 
-const sade = new Person("soso", 20);
+const sade = new Person2("soso", 20);
 sade.eating("chicken");
 sade.eating("rice");
 sade.poop();
@@ -127,7 +127,7 @@ console.log(ford);
 // console.log(demi);
 
 //Refactoring using class
-class Baby extends Person {
+class Baby extends Person2 {
   constructor(name, age) {
     super(name, age);
   }
